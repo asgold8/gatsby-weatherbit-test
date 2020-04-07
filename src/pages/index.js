@@ -29,7 +29,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
+      <h1 style={{ fontSize: "20px" }}>Hello</h1>
       <div>{renderLocalCurrentWeather()}</div>
       <br />
       <Link to="/page-2/">Go to page 2</Link>

@@ -1,4 +1,5 @@
 import React from "react"
+import moment from "moment-timezone"
 
 import Spinner from "./spinner"
 import useLocation from "../hooks/useLocation"
@@ -13,6 +14,7 @@ const CurrentLocalWeather = () => {
   let weatherDesc
   let city
   let temp
+  let lastUpdated
 
   if (errorMsg) {
     content = <div>Error: {errorMsg}</div>
@@ -22,6 +24,10 @@ const CurrentLocalWeather = () => {
       city = weather.city_name
       temp = weather.temp + "°" + (units === "I" ? "F" : "C")
       weatherDesc = weather.weather.description
+      lastUpdated = moment
+        .utc(weather.ob_time)
+        .tz(weather.timezone)
+        .format("MMMM Do YYYY, h:mm:ss a")
       content = null
     } else {
       content = <Spinner message="Weather loading..." />
@@ -35,6 +41,7 @@ const CurrentLocalWeather = () => {
       <div>{city}</div>
       <div>{weatherDesc}</div>
       <div>{temp}</div>
+      <div style={{ fontSize: "12px" }}>Last Updated: {lastUpdated}</div>
       <div>{content}</div>
       {}
     </div>

@@ -16,6 +16,11 @@ function useCurrentLocalWeather(position, units) {
             lat: position.lat,
             lon: position.lon,
             units,
+            /****
+               if using CodeSanbox, be sure to set the value below
+               in the Server Control Panel -> Secrets . Then 
+               restart the server. 
+             */
             key: process.env.GATSBY_WEATHERBIT_KEY,
           },
         })
