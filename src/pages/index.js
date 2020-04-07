@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Button } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -14,13 +15,14 @@ const IndexPage = () => {
       content = <CurrentLocalWeather />
     } else {
       content = (
-        <button
+        <Button
+          primary
           onClick={() => {
             setLocalCurrentWeather(true)
           }}
         >
           Get Current Local Weather
-        </button>
+        </Button>
       )
     }
     return content
@@ -32,7 +34,7 @@ const IndexPage = () => {
       <h1 style={{ fontSize: "20px" }}>Hello</h1>
       <div>{renderLocalCurrentWeather()}</div>
       <br />
-      <Link to="/page-2/">Go to page 2</Link>
+      <Link to="/about/">About</Link>
     </Layout>
   )
 }
