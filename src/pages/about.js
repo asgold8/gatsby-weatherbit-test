@@ -11,7 +11,8 @@ const AboutPage = () => (
     <p>
       Welcome! On the homepage, if you click the "Get Current Local Weather",
       and click "Allow" when prompted for access to your location, the app will
-      show you the current weather in your area.
+      show you the closest, current weather in your area, based on your latitude
+      and longitutde.
     </p>
     <p>
       This demo uses React JS built with Gatsby. Weather is pulled from the
