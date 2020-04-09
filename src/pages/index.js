@@ -31,7 +31,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1 style={{ fontSize: "20px" }}>Hello</h1>
+      <h1 style={{ fontSize: "20px" }}>Hi there!</h1>
       <div>{renderLocalCurrentWeather()}</div>
       <br />
       <Link to="/about/">About</Link>
